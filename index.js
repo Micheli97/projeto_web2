@@ -9,7 +9,7 @@ const auth = require("./src/config/auth.js")
 
 const app = express()
 
-// Inicializando variaveis do dotEnv
+// Inicializando variaveis do dotEnv 
 dotenv.config()
 
 // Inicializando o banco de dados
