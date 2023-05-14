@@ -2,6 +2,9 @@
   "name": "web2",
   "version": "1.0.0",
   "description": "Prova web",
+  "engines": {
+    "node": "14.x"
+  },
   "main": "../web2/questao_1/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
