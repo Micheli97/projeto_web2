@@ -170,6 +170,7 @@ PUT /api/player/idJogador
 
 <h4>Deletar jogador</h4>
 Efetua a remoção do jogador do sistema.
+
 ```
 DELETE /api/player/idJogador
 ```
@@ -177,6 +178,7 @@ DELETE /api/player/idJogador
 <h3>Campeonato</h3>
 <h4>Gerar campeonato</h4>
 Gera o campeonato por meio da combinação dos times cadastrados no sistema.
+
 ```
 POST /api/champions/
 ```
