@@ -14,6 +14,9 @@ projeto-web2-git-main-micheli97.vercel.app
 
 <h4>Cadastro de usuário</h4>
 
+O usuário cadastrado previamente no banco de dados poderá efetuar o cadastro de novos usuários.
+
+
 ```
 POST /api/users/register
 ```
@@ -47,24 +50,27 @@ POST /api/users/register
 
 <h3>Teams</h3>
 <h4>Listar todos os times cadastrados</h4>
+Retorna a lista de todos os times cadastrados no sistema.
 
 ```
 GET /api/teams/
 ```
 
 <h4>Obtém a quantidade total de times cadastrados</h4>
-
+Retorna a quantidade total de times cadastrados no sistema.
 ```
 GET /api/teams/team_count
 ```
 
 <h4>Obtém time pelo ID</h4>
+Retorna um time específico por meio do ID.
 
 ```
-PUT /api/teams/:idTeam
+GET /api/teams/:teamID
 ```
 
 <h4>Cadastrar um novo time</h4>
+Efetua o cadastro de um novo time no sistema.
 
 ```
 POST /api/teams/register
@@ -82,6 +88,7 @@ POST /api/teams/register
 ```
 
 <h4>Editar time</h4>
+Efetua a edição do time por meio do(s) campo(s) que precisam ser editados.
 
 ```
 PUT /api/teams/:idTeam
@@ -96,13 +103,15 @@ PUT /api/teams/:idTeam
 ```
 
 <h4>Deletar time</h4>
+Efetua a remoção do time do sistema.
 
 ```
 DELETE /api/teams/:idTeam
 ```
 
 <h3>Players</h3>
-<h4>Cadastrar um novo time</h4>
+<h4>Cadastrar um novo jogador</h4>
+Efetua o cadastro de um novo jogador no sistema.
 
 ```
 POST /api/player/register
@@ -124,18 +133,21 @@ POST /api/player/register
 ```
 
 <h4>Listar todos os jogadores cadastrados</h4>
+Retorna a lista de todos os jogadores cadastrados no sistema.
 
 ```
 GET /api/player/
 ```
 
 <h4>Listar todos os jogador pelo ID do time</h4>
+Retorna a lista de jogadores associados a um determinado time.
 
 ```
 GET /api/player/team/idTEeam
 ```
 
 <h4>Editar jogador</h4>
+Efetua a edição do jogador por meio do(s) campo(s) que precisam ser editados.
 
 ```
 PUT /api/player/idJogador
@@ -157,19 +169,20 @@ PUT /api/player/idJogador
 ```
 
 <h4>Deletar jogador</h4>
-
+Efetua a remoção do jogador do sistema.
 ```
 DELETE /api/player/idJogador
 ```
 
 <h3>Campeonato</h3>
 <h4>Gerar campeonato</h4>
-
+Gera o campeonato por meio da combinação dos times cadastrados no sistema.
 ```
 POST /api/champions/
 ```
 
 <h4>Listar jogos do campeonato</h4>
+Retorna a lista de jogos do campeonato.
 
 ```
 GET /api/champions/games
