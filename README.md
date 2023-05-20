@@ -12,7 +12,7 @@ projeto-web2-git-main-micheli97.vercel.app
 
 <h3>Login</h3>
 
-*Cadastro de usuário
+* Cadastro de usuário
 
 O usuário cadastrado previamente no banco de dados poderá efetuar o cadastro de novos usuários.
 
