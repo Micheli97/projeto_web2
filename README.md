@@ -20,7 +20,7 @@ O usuário cadastrado previamente no banco de dados poderá efetuar o cadastro d
 ```
 POST /api/users/register
 ```
-<h5>Exemplo</h5>
+Exemplo
 
 ```
 {
@@ -30,7 +30,7 @@ POST /api/users/register
 }
 ```
 
- <h4>Login</h4>
+* Login 
  O usuário previamente cadastrado no banco poderá efetuar o login por meio do e-mail e senha fornecidos durante o cadastro. 
  <br/>
  <br/>
@@ -39,7 +39,7 @@ POST /api/users/register
  POST /api/users/login
 ```
  
- <h5>Exemplo</h5>
+Exemplo
  
  ```
  {
@@ -49,33 +49,34 @@ POST /api/users/register
 ```
 
 <h3>Teams</h3>
-<h4>Listar todos os times cadastrados</h4>
+
+* Listar todos os times cadastrados
 Retorna a lista de todos os times cadastrados no sistema.
 
 ```
 GET /api/teams/
 ```
 
-<h4>Obtém a quantidade total de times cadastrados</h4>
+* Obtém a quantidade total de times cadastrados
 Retorna a quantidade total de times cadastrados no sistema.
 ```
 GET /api/teams/team_count
 ```
 
-<h4>Obtém time pelo ID</h4>
+* Obtém time pelo ID
 Retorna um time específico por meio do ID.
 
 ```
 GET /api/teams/:teamID
 ```
 
-<h4>Cadastrar um novo time</h4>
+* Cadastrar um novo time 
 Efetua o cadastro de um novo time no sistema.
 
 ```
 POST /api/teams/register
 ```
-<h5>Exemplo</h5>
+Exemplo
 
 ```
 {
@@ -87,14 +88,14 @@ POST /api/teams/register
 }
 ```
 
-<h4>Editar time</h4>
+* Editar time 
 Efetua a edição do time por meio do(s) campo(s) que precisam ser editados.
 
 ```
-PUT /api/teams/:idTeam
+PUT /api/teams/:teamID
 ```
 
-<h5>Exemplo</h5>
+Exemplo
 
 ```
 {
@@ -102,22 +103,23 @@ PUT /api/teams/:idTeam
 }
 ```
 
-<h4>Deletar time</h4>
+* Deletar time 
 Efetua a remoção do time do sistema.
 
 ```
-DELETE /api/teams/:idTeam
+DELETE /api/teams/:teamID
 ```
 
 <h3>Players</h3>
-<h4>Cadastrar um novo jogador</h4>
+
+* Cadastrar um novo jogador
 Efetua o cadastro de um novo jogador no sistema.
 
 ```
 POST /api/player/register
 ```
 
-<h5>Exemplo</h5>
+Exemplo
 
 ```
 {
@@ -132,28 +134,28 @@ POST /api/player/register
 }
 ```
 
-<h4>Listar todos os jogadores cadastrados</h4>
+* Listar todos os jogadores cadastrados 
 Retorna a lista de todos os jogadores cadastrados no sistema.
 
 ```
 GET /api/player/
 ```
 
-<h4>Listar todos os jogador pelo ID do time</h4>
+* Listar todos os jogadores pelo ID do time
 Retorna a lista de jogadores associados a um determinado time.
 
 ```
-GET /api/player/team/idTEeam
+GET /api/player/team/:teamID
 ```
 
-<h4>Editar jogador</h4>
+* Editar jogador 
 Efetua a edição do jogador por meio do(s) campo(s) que precisam ser editados.
 
 ```
-PUT /api/player/idJogador
+PUT /api/player/:playerID
 ```
 
-<h5>Exemplo</h5>
+Exemplo
 
 ```
 {
@@ -168,22 +170,23 @@ PUT /api/player/idJogador
 }
 ```
 
-<h4>Deletar jogador</h4>
+* Deletar jogador 
 Efetua a remoção do jogador do sistema.
 
 ```
-DELETE /api/player/idJogador
+DELETE /api/player/:playerID
 ```
 
 <h3>Campeonato</h3>
-<h4>Gerar campeonato</h4>
+
+* Gerar campeonato 
 Gera o campeonato por meio da combinação dos times cadastrados no sistema.
 
 ```
 POST /api/champions/
 ```
 
-<h4>Listar jogos do campeonato</h4>
+* Listar jogos do campeonato
 Retorna a lista de jogos do campeonato.
 
 ```
