@@ -2,6 +2,7 @@ const express = require("express")
 const bodyParse = require("body-parser")
 const router = express.Router();
 const auth = require("../../config/auth.js")
+const fs = require('fs');
 
 router.use(bodyParse.json())
 
