@@ -11,7 +11,7 @@ router.use(bodyParse.json())
 router.get("/video", auth.validateToken, async (req, res) => {
     const range = req.headers.range;
     const videoPath = "olimpiadas.mp4";
-    const configDirectory = path.resolve(process.cwd(), "assets");
+    const configDirectory = path.resolve(process.cwd(), "src/assets");
     const videoSize = fs.statSync(path.join(configDirectory, videoPath)).size;
 
     const chunkSize = 10 ** 6;
