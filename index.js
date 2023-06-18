@@ -26,7 +26,7 @@ app.use("/api/users", loginRouter);
 app.use("/api/teams", auth.validateToken, teamsRouter);
 app.use("/api/player", auth.validateToken, playerRouter);
 app.use("/api/champions", auth.validateToken, championsRouter);
-app.use("/api/stream", auth.validateToken, streamRouter);
+app.use("/api/stream", streamRouter);
 
 
 // Configuração da porta 
