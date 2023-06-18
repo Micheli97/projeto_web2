@@ -10,7 +10,7 @@ const auth = require("./src/config/auth.js");
 const streamRouter = require("./src/routers/stream/stream_router");
 
 const app = express();
-const Server = http.createServer(app);
+// const Server = http.createServer(app);
 
 // Inicializando variaveis do dotEnv 
 dotenv.config();
@@ -30,11 +30,10 @@ app.use("/api/stream", auth.validateToken, streamRouter);
 
 
 // Configuração da porta 
-app.listen(4000);
+app.listen(5000);
 
-Server.listen(5000, () => {
-  console.log("Servidor está ouvindo na porta 5000");
-});
+// Server.listen(5000, () => {
+//   console.log("Servidor está ouvindo na porta 5000");
+// });
 
-module.exports = Server;
-
+// module.exports = Server;
