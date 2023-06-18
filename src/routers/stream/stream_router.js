@@ -3,23 +3,25 @@ const bodyParse = require("body-parser")
 const router = express.Router();
 const auth = require("../../config/auth.js")
 const fs = require('fs');
+var path = require("path");
 
 router.use(bodyParse.json())
 
 
-router.get("/video",  auth.validateToken, async (req, res) => {
+router.get("/video", auth.validateToken, async (req, res) => {
     const range = req.headers.range;
     const videoPath = "olimpiadas.mp4";
-    const videoSize = fs.statSync(videoPath).size;
+    const configDirectory = path.resolve(process.cwd(), "src");
+    const videoSize = fs.statSync(path.join(configDirectory, videoPath)).size;
 
     const chunkSize = 10 ** 6;
     const start = Number(range.replace(/\D/g, ""));
     const end = Math.min(start + chunkSize, videoSize - 1);
 
-    const contentLength = end - start + 1; 
+    const contentLength = end - start + 1;
 
     const headers = {
-        "Content-Range": `bytes ${start}-${end}/${videoSize}`,	
+        "Content-Range": `bytes ${start}-${end}/${videoSize}`,
         "Accept-Ranges": "bytes",
         "Content-Length": contentLength,
         "Content-Type": "video/mp4",
