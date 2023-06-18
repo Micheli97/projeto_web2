@@ -14,6 +14,7 @@ router.post("/", auth.validateToken, async (req, res) => {
 
         // Total de times cadastrados
         const team = await TeamModel.countDocuments({});
+        const listTeam = await TeamModel.find({});
         if (team < 8) {
             return res.status(401).send('É necessário ter 8 times cadastrados para gerar um campeonato.');
         }
@@ -26,7 +27,7 @@ router.post("/", auth.validateToken, async (req, res) => {
         }
 
         // Lista do nome dos times cadastrados
-        const nameTeams = _getNameTeams(team)
+        const nameTeams = _getNameTeams(listTeam)
 
         // Lista de times sorteados
         const registeredTeams = _generateChampions(nameTeams);
