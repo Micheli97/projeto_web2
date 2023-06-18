@@ -8,11 +8,11 @@ var path = require("path");
 router.use(bodyParse.json())
 
 
-router.get("/video", async (req, res) => {
+router.get("/video", auth.validateToken, async (req, res) => {
     const range = req.headers.range;
-    const videoPath = "olimpiadas.mp4";
+    const videoPath = path.join(configDirectory, "olimpiadas.mp4");
     const configDirectory = path.resolve(process.cwd(), "src/assets");
-    const videoSize = fs.statSync(path.join(configDirectory, videoPath)).size;
+    const videoSize = fs.statSync(videoPath).size;
 
     const chunkSize = 10 ** 6;
     const start = Number(range.replace(/\D/g, ""));
