@@ -1,19 +1,22 @@
+const TokenModel = require("../models/token")
 
 var _tokens = {
   "tolkf;;lm;ldmf;slmdf;lsmdf;lsmd;flms;dlfm": true
 }
 
-exports.setToken = function (token) {
+exports.setToken = async function (token)  {
   _tokens[token] = true;
+  await TokenModel.create({ token: token })
+
 };
 
-exports.tokenIsValid = function (token) {
-  return _tokens[token];
-};
 
-exports.validateToken = function (req, res, next) {
+
+exports.validateToken =async  function (req, res, next) {
   var token = req.headers["token"];
-  if (!_tokens[token]) {
+  token = await TokenModel.findOne({ token });
+
+  if (!token) {
    return res.status(401).send({ mensagem: 'Token inválido!' });
   }
 
